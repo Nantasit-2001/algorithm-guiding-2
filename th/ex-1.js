@@ -6,7 +6,16 @@
 */
 
 function heaviestBagPair(bagWeights) {
-  // Start Coding Here
+  if (bagWeights.length<2) return null
+  let maxValue = 0; 
+  let arrmax =[]
+  for (let i = 0; i <bagWeights.length-1;i++){
+    if(bagWeights[i]+bagWeights[i+1]>maxValue){
+      maxValue = bagWeights[i]+bagWeights[i+1];
+      arrmax = [bagWeights[i],bagWeights[i+1]]
+    }
+  }
+  return " Output: "+arrmax+" เพราะเป็นคู่กระเป๋าที่หนักที่สุด ("+maxValue+" กก.)"
 }
 
 console.log(heaviestBagPair([5, 8, 12, 15, 7]));
